@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblNumero1 = new System.Windows.Forms.Label();
-            this.textNumero1 = new System.Windows.Forms.TextBox();
-            this.textNumero2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.txtIMC = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
             this.lblImc = new System.Windows.Forms.Label();
@@ -52,47 +53,48 @@
             this.lblNumero1.Text = "Calculadora IMC";
             this.lblNumero1.Click += new System.EventHandler(this.lblNumero1_Click);
             // 
-            // textNumero1
+            // txtPeso
             // 
-            this.textNumero1.Location = new System.Drawing.Point(139, 133);
-            this.textNumero1.Name = "textNumero1";
-            this.textNumero1.Size = new System.Drawing.Size(183, 20);
-            this.textNumero1.TabIndex = 1;
+            this.txtPeso.Location = new System.Drawing.Point(139, 133);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(183, 20);
+            this.txtPeso.TabIndex = 1;
             // 
-            // textNumero2
+            // txtAltura
             // 
-            this.textNumero2.Location = new System.Drawing.Point(139, 190);
-            this.textNumero2.Name = "textNumero2";
-            this.textNumero2.Size = new System.Drawing.Size(183, 20);
-            this.textNumero2.TabIndex = 2;
+            this.txtAltura.Location = new System.Drawing.Point(139, 190);
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(183, 20);
+            this.txtAltura.TabIndex = 2;
             // 
-            // button1
+            // btnCalcular
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(148, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Calcular";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(148, 287);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(161, 42);
+            this.btnCalcular.TabIndex = 3;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // txtIMC
             // 
             this.txtIMC.Location = new System.Drawing.Point(139, 238);
             this.txtIMC.Name = "txtIMC";
+            this.txtIMC.ReadOnly = true;
             this.txtIMC.Size = new System.Drawing.Size(183, 20);
             this.txtIMC.TabIndex = 4;
             // 
-            // label1
+            // lblResultado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 358);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Resultado";
-//            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(186, 358);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(78, 16);
+            this.lblResultado.TabIndex = 5;
+            this.lblResultado.Text = "Resultado";
             // 
             // lblPeso
             // 
@@ -128,18 +130,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = global::AtividadeIMC.Properties.Resources.EpNIwV2UwAASNDZ;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblImc);
             this.Controls.Add(this.lblAltura);
             this.Controls.Add(this.lblPeso);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.txtIMC);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textNumero2);
-            this.Controls.Add(this.textNumero1);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.txtAltura);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblNumero1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Calculadora IMC";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,11 +155,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblNumero1;
-        private System.Windows.Forms.TextBox textNumero1;
-        private System.Windows.Forms.TextBox textNumero2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.TextBox txtIMC;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblAltura;
         private System.Windows.Forms.Label lblImc;
